@@ -1,0 +1,7 @@
+.git
+data
+server.exe
+server.exe~
+*.log
+*.out.log
+*.err.log

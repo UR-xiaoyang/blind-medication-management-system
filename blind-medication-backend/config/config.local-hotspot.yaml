@@ -1,0 +1,24 @@
+server:
+  port: 18080
+  mode: debug
+
+database:
+  host: 127.0.0.1
+  port: 3306
+  username: root
+  password: ""
+  dbname: blind_medication
+  charset: utf8mb4
+  max_idle_conns: 10
+  max_open_conns: 100
+
+jwt:
+  secret: ""  # Required at runtime: set JWT_SECRET in the environment.
+  expire_hours: 24
+
+mqtt:
+  broker: "tcp://127.0.0.1:1883"
+  client_id: "backend-server-local-hotspot"
+  username: ""
+  password: ""
+  topic_prefix: "blind_medication/"

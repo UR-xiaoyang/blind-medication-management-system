@@ -1,0 +1,38 @@
+services:
+  backend:
+    build: ./blind-medication-backend
+    restart: unless-stopped
+    volumes:
+      - backend_data:/app/data
+    environment:
+      - CONFIG_PATH=/app/config/config.docker.yaml
+      - JWT_SECRET=${JWT_SECRET:?set JWT_SECRET in .env}
+    networks:
+      - internal
+
+  frontend:
+    build: ./blind-medication-frontend
+    restart: unless-stopped
+    networks:
+      - internal
+
+  nginx:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${APP_PORT:-18080}:80"
+    volumes:
+      - ./deploy/nginx/default.conf.template:/etc/nginx/templates/default.conf.template:ro
+    environment:
+      - APP_DOMAIN=${APP_DOMAIN:-_}
+    depends_on:
+      - backend
+      - frontend
+    networks:
+      - internal
+
+volumes:
+  backend_data:
+
+networks:
+  internal:

@@ -1,0 +1,24 @@
+server:
+  port: 8080
+  mode: release
+
+database:
+  host: ""
+  port: 0
+  username: ""
+  password: ""
+  dbname: ""
+  charset: ""
+  max_idle_conns: 5
+  max_open_conns: 50
+
+jwt:
+  secret: ""  # Required at runtime: set JWT_SECRET in the environment.
+  expire_hours: 72
+
+mqtt:
+  broker: ""
+  client_id: ""
+  username: ""
+  password: ""
+  topic_prefix: ""

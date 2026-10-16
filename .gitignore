@@ -1,0 +1,44 @@
+# Local secrets and runtime configuration
+.env
+.env.*
+!.env.example
+
+# Runtime data and logs
+*.db
+*.db-shm
+*.db-wal
+*.log
+*.out
+*.err
+__pycache__/
+*.py[cod]
+/data/
+/blind-medication-backend/data/
+
+# JavaScript dependencies and build outputs
+/blind-medication-frontend/node_modules/
+/blind-medication-frontend/dist/
+
+# Flutter/Dart generated files
+/volunteer_app/.dart_tool/
+/volunteer_app/.flutter-plugins
+/volunteer_app/.flutter-plugins-dependencies
+/volunteer_app/build/
+/volunteer_app/.packages
+
+# Local Arduino tools, caches and build products
+/.tools/
+/firmware/**/build/
+/firmware/**/.arduino*/
+
+# Locally produced binaries
+/blind-medication-backend/server.exe
+/blind-medication-backend/server.exe~
+
+# Local agent/editor state
+/.claude/
+/CLAUDE.local/
+/.codex-logs/
+
+# Vendor firmware/update-tool binaries and proprietary components
+/Hummingbird-M-Update-Tool/
